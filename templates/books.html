@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Список книг</h2>
+    <ul>
+        {% for book in books %}
+            <li>
+                {{ book.title }} (Сторінок: {{ book.pages }}, Автор ID: {{ book.author_id }})
+                <form method="post" action="/delete_book/{{ book.author_id }}/{{ book.title }}" style="display:inline;">
+                    <button type="submit" class="delete-btn">Видалити</button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+    <form method="post" action="/logout" style="margin-top: 20px;">
+        <button type="submit">Вийти</button>
+    </form>
+{% endblock %}

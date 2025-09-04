@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Додати нову книгу для автора {{ author_id }}</h2>
+    <form method="post" action="/authors/{{ author_id }}/books/">
+        <p>Назва книги: <input type="text" id="title" name="title" required></p>
+        <p>Кількість сторінок: <input type="number" id="pages" name="pages" min="10" required></p>
+        <p><button type="submit">Створити</button></p>
+    </form>
+{% endblock %}

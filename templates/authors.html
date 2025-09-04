@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Список авторів</h2>
+    <ul>
+        {% for author in authors %}
+            <li>
+                {{ author.name }} (ID: {{ author.id }})
+                <a href="/create_book/{{ author.id }}">Додати книгу для цього автора</a>
+                <form method="post" action="/delete_author/{{author.id }}" style="display:inline;">
+                    <button type="submit" class="delete-btn">Видалити</button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+    <form method="post" action="/logout" style="margin-top: 20px;">
+        <button type="submit">Вийти</button>
+    </form>
+{% endblock %}

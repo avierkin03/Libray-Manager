@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Додати нового автора</h2>
+    <form method="post" action="/create_author/">
+        <label for="name">Ім'я автора:</label>
+        <p>Ім'я автора: <input type="text" id="name" name="name" required></p>
+        <button type="submit">Створити</button>
+    </form>
+{% endblock %}
